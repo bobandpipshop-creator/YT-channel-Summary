@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YT AI Summarizer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-white min-h-screen flex items-center justify-center p-6">
+    <div class="max-w-2xl w-full bg-slate-800 p-8 rounded-2xl shadow-2xl">
+        <h1 class="text-3xl font-bold text-center mb-8 text-cyan-400">YouTube AI Summarizer</h1>
+        <form method="POST" class="space-y-4">
+            <input type="text" name="url" placeholder="Paste YouTube Link (e.g., https://youtu.be/...)" 
+                   class="w-full p-4 rounded-lg bg-slate-700 border border-slate-600 focus:ring-2 focus:ring-cyan-500 outline-none">
+            <button type="submit" class="w-full bg-cyan-600 hover:bg-cyan-500 py-4 rounded-lg font-bold transition">Summarize Now</button>
+        </form>
+        {% if summary %}
+        <div class="mt-8 p-6 bg-slate-900 rounded-xl border border-slate-700">
+            <h2 class="text-xl font-semibold mb-4 text-cyan-300">Summary:</h2>
+            <p class="text-slate-300 leading-relaxed whitespace-pre-wrap">{{ summary }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
